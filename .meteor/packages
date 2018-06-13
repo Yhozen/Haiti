@@ -19,6 +19,15 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 
  anti:fake                    # Fake data
  meteortoys:allthings         # Client debugger
- lawshe:full-page             # Fullpage sections
  coagmano:stylus              # stylus preprocessor
  materialize:materialize      # design library
+
+# Looking
+iron:router
+useraccounts:materialize
+
+# Accounts
+accounts-base
+accounts-password
+accounts-facebook
+service-configuration

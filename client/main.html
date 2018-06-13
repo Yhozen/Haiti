@@ -3,20 +3,15 @@
 </head>
 
 <body>
-    <div id="fullpage">
-        <div class="section" id="first">{{> first}}</div>
-        <div class="section" id="second">{{> second}}</div>
-        <div class="section" id="third">{{> third}}</div>
-        <div class="section" id="forth">{{> forth}}</div>
-      </div>
+    
 </body>
 
-<template name="first">
-  <h2>Conectando personas! 💡</h2>
+<template name="layout">
+  {{> yield}}
 </template>
 
-<template name="second">
-    <h2>Haiti + Chile = 💖</h2>
+<template name="login">
+        {{> atForm}}
 </template>
 
 <template name="third">

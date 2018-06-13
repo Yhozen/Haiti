@@ -3,10 +3,12 @@ import { Fake } from 'meteor/anti:fake'
 
 
 import { Chileno, Haitiano } from '../both/collections'
+import googleInit from './accounts'
 
 
 Meteor.startup(() => {
   [ Chileno, Haitiano ].forEach(fillCollection)
+  googleInit()
 })
 
 
