@@ -7,11 +7,19 @@
 </template>
 
 <template name="logoutButton">
-    <button class="waves-effect waves-light btn-large btn-flat white"  id='logout'>Salir</button>
+    <button class="waves-effect waves-dark btn-large btn-flat white"  id='logout'>Salir</button>
 </template>
 <template name="test">
-  <p>hola test</p>
-  {{> logoutButton}}
+  <div id="lenguaje">
+      <h3>Bienvenido, {{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h3>
+      <h5>¿Cuál es tu lenguaje nativo?</h5>
+      <a class="waves-effect waves-dark btn-large btn-flat white" id="creol">Creol</a>
+      <a class="waves-effect waves-dark btn-large btn-flat white" id="espanol">Español</a>
+      {{#unless currentUser.profile.language}}
+        {{> selectLanguage}}
+      {{/unless}}  
+      {{> logoutButton}}
+  </div>
 </template>
 
 <template name="login">
@@ -21,9 +29,9 @@
     </div>
     <div id="botones">
         <p>¿Aún no tienes cuenta?</p>
-        <a class="waves-effect waves-light btn-large btn-flat white modal-trigger" data-target="signIn-modal">REGISTRATE</a>
+        <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="signIn-modal">REGISTRATE</a>
         <p>¿Ya tienes cuenta?</p>
-        <a class="waves-effect waves-light btn-large btn-flat white modal-trigger" data-target="logIn-modal">INICIA SESIóN</a>
+        <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="logIn-modal">INICIA SESIóN</a>
     </div>
     <!-- Modal Structure -->
     <div id="signIn-modal"  class="modal">
@@ -51,4 +59,12 @@
       {{> yield}}
     </div>
   </div>
+</template>
+
+<template name="selectLanguage">
+  <p>sadada</p>
+</template>
+
+<template name="interes">
+  <h1>asdasda</h1>
 </template>

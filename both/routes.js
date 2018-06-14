@@ -30,6 +30,14 @@ Router.route('/new', {
     this.render()
   }
 })
+Router.route('/interes', {
+  name: 'interes',
+  template: 'interes',
+  layoutTemplate: 'LoginLayout',
+  action: function () {
+    this.render()
+  }
+})
 function redirectLogged () {
   if (Meteor.user()) {
     Router.go('new')
