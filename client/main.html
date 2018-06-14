@@ -12,6 +12,15 @@
   </div>
 </template>
 
+<template name="MainLayout2">
+    <div id="crema">
+      <img src="/images/zanmi.svg" id="mainLogo"/>
+      {{> navbar}}
+     
+      {{> yield}}
+    </div>
+  </template>
+
 <template name="logoutButton">
     <button class="waves-effect waves-dark btn-large btn-flat white"  id='logout'>Salir</button>
 </template>
@@ -67,7 +76,7 @@
 </template>
 
 <template name="listaIntereses">
-  <div class='flex'>
+  <div class='flex' id="listaIntereses">
       {{#each intereses}}
         <a class="waves-effect waves-dark btn-large btn-flat" data-tag={{nombre}}>
           {{#if activo}}
@@ -90,14 +99,34 @@
 </template>
 
 <template name="perfil">
-  <h1>test</h1>
+    <div class="row">
+        <div class="col s6 textos">
+            <h2>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h2>
+            <h5>{{capitalize (idioma)}}</h5>
+            <h5>Nivel 2</h5>
+        </div>
+        <div class="col s6">
+            <img id="profile_pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" />
+        </div>
+      </div>
 </template>
 
 <template name="navbar">
   <ul id="nav-mobile">
     <li><a class="btn-flat btn-large" href="perfil">Mi perfil</a></li>
-    <li><a class="btn-flat btn-large" href="badges.html">Explorar Amigos</a></li>
-    <li><a class="btn-flat btn-large" href="collapsible.html">Explorar Etiquetas</a></li>
+    <li><a class="btn-flat btn-large" href="amigos">Explorar Amigos</a></li>
+    <li><a class="btn-flat btn-large" href="tags">Explorar Etiquetas</a></li>
   </ul>
 </template>
 
+<template name="tags">
+  <div class="somepadding tags">
+    <h3>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h3>
+    <p>¿Quieres agregar más etiquetas a tu perfil?</p>
+    {{> listaIntereses}}
+  </div>
+</template>
+
+<template name="amigos">
+    <h2>sadasdas</h2>
+  </template>

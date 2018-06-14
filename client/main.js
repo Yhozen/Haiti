@@ -52,6 +52,17 @@ Template.listaIntereses.helpers({
   }
 })
 
+Template.perfil.helpers({
+  idioma: function() {
+    if (Meteor.user().profile.language === 0) {
+      return 'creol'
+    } else {
+      return 'español'
+    }
+  },
+  capitalize: (string) => string.charAt(0).toUpperCase() + string.slice(1)
+})
+
 
 Template.listaIntereses.events({
   'click .btn-flat' (event) {

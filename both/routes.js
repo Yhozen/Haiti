@@ -46,6 +46,22 @@ Router.route('/perfil', {
     this.render()
   }
 })
+Router.route('/tags', {
+  name: 'tags',
+  template: 'tags',
+  layoutTemplate: 'MainLayout2',
+  action: function () {
+    this.render()
+  }
+})
+Router.route('/amigos', {
+  name: 'amigos',
+  template: 'amigos',
+  layoutTemplate: 'MainLayout2',
+  action: function () {
+    this.render()
+  }
+})
 function redirectLogged () {
   if (Meteor.user()) {
     Router.go('lenguaje')
