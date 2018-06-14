@@ -22,9 +22,9 @@ Router.route('/', {
 })
 
 
-Router.route('/new', {
-  name: 'new',
-  template: 'test',
+Router.route('/lenguaje', {
+  name: 'lenguaje',
+  template: 'lenguaje',
   layoutTemplate: 'LoginLayout',
   action: function () {
     this.render()
@@ -38,9 +38,17 @@ Router.route('/interes', {
     this.render()
   }
 })
+
+Router.route('/perfil', {
+  name: 'main',
+  template: 'perfil',
+  action: function () {
+    this.render()
+  }
+})
 function redirectLogged () {
   if (Meteor.user()) {
-    Router.go('new')
+    Router.go('lenguaje')
   } else {
     this.next()
   }

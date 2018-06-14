@@ -4,13 +4,15 @@
 </head>
 
 <template name="MainLayout">
-  {{> yield}}
+  <div id="azulmorado">
+      {{> yield}}
+  </div>
 </template>
 
 <template name="logoutButton">
     <button class="waves-effect waves-dark btn-large btn-flat white"  id='logout'>Salir</button>
 </template>
-<template name="test">
+<template name="lenguaje">
   <div id="lenguaje">
       <img src="/images/zanmi.svg" />
       <h3>Bienvenido, {{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h3>
@@ -80,6 +82,11 @@
     <h3>¡Cuentanos de ti!</h3>
     <p>Agrega etiquetas a tu perfil, ¡facilitará encontrar gente con tus mismos gustos y hobbies! </p>
     {{> listaIntereses}}
+    <a class="waves-effect waves-dark btn-large btn-flat morado">finalizar</a>
   </div>
+</template>
+
+<template name="perfil">
+  <h1>test</h1>
 </template>
 

@@ -31,7 +31,7 @@ Template.logoutButton.events({
   }
 })
 
-Template.test.events({
+Template.lenguaje.events({
   'click #creol' (event) {
     Meteor.call('asignarLenguaje', 0)
   },
@@ -57,6 +57,12 @@ Template.listaIntereses.events({
   'click .btn-flat' (event) {
     Meteor.call('toggleInterest', event.target.dataset.tag)
     console.log(Meteor.user())
+  }
+})
+
+Template.interes.events({
+  'click .morado' (event) {
+    Router.go('main')
   }
 })
 
