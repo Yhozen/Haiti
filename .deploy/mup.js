@@ -2,17 +2,16 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '1.2.3.4',
-      username: 'root',
+      host: '45.33.56.99',
+      username: 'garox',
       // pem: './path/to/pem'
-      // password: 'server-password'
       // or neither for authenticate from ssh-agent
     }
   },
 
   app: {
     // TODO: change app name and path
-    name: 'app',
+    name: 'zanmi',
     path: '../',
 
     servers: {
@@ -26,14 +25,15 @@ module.exports = {
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://app.com',
-      MONGO_URL: 'mongodb://mongodb/meteor',
-      MONGO_OPLOG_URL: 'mongodb://mongodb/local',
+      ROOT_URL: 'http://garox.org',
+      MONGO_URL: 'mongodb://mongodb:27017/meteor_vermi',
+      MONGO_OPLOG_URL: 'mongodb://mongodb:27017/local',
+      PORT: 3018
     },
 
     docker: {
-      // change to 'abernix/meteord:base' if your app is using Meteor 1.4 - 1.5
-      image: 'abernix/meteord:node-8.4.0-base',
+      // change to 'abernix/meteord:base' if your app is using Meteor 1.4 - 1.5 
+      image: 'zodern/meteor:root',
     },
 
     // Show progress bar while uploading bundle to server

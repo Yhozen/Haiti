@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating'
 import { ReactiveVar } from 'meteor/reactive-var'
 import { $ } from 'meteor/jquery'
 import { Router } from 'meteor/iron:router'
+import { _ } from 'meteor/underscore'
 
 import { Chileno, Haitiano } from '../both/collections'
 const intereses = ['Futbol', 'Música', 'Arte', 'Tennis', 'Tecnología', 'Comida', 'Arquitectura', 'Medicina', 'Diseño', 'Construcción', 'Familia', 'Animales', 'Películas', 'Fiestas', 'Libros']
@@ -14,12 +15,6 @@ Tracker.autorun(() => {
   Meteor.subscribe('chileno')
   Meteor.subscribe('haitiano')
 })
-
-// Template.info.helpers({
-//   posts() {
-//     return Chileno.find()
-//   },
-// })
 
 Template.login.rendered = function() {
   $('.modal').modal()
@@ -36,11 +31,19 @@ Template.lenguaje.events({
     Router.go('interes')
   }
 })
+
 Template.listaIntereses.helpers({
   intereses: function() {
     let user = Meteor.user()
-    if (user) {
+    if (user && user.profile && user.profile.interest) {
       return formatIntereses(intereses, Meteor.user())
+    } else {
+      return intereses.map(interes => {
+        return {
+          nombre: interes,
+          activo: false
+        }
+      })
     }
     return false
   }
