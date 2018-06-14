@@ -1,7 +1,20 @@
 import { Meteor } from 'meteor/meteor'
 
 Meteor.methods({
-  asignarLenguaje (userId, language) {
-    Meteor.users.update(userId, {$set: {'profile.language': language }})
+  asignarLenguaje (language) {
+    Meteor.users.update(Meteor.userId(), {$set: {'profile.language': language }})
+  },
+  toggleInterest (interest) {
+    let listOfInt = []
+    if (Meteor.user().profile.interest) {
+        listOfInt = Meteor.user().profile.interest
+    }
+    if (listOfInt.includes(interest)) {
+        listOfInt.pop(interest)
+    } else {
+        listOfInt.push(interest)
+    }
+    
+    Meteor.users.update(Meteor.userId(), {$set: {'profile.interest':  listOfInt}})
   }
 })

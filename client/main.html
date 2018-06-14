@@ -1,5 +1,6 @@
 <head>
   <title>joseHaiti</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <template name="MainLayout">
@@ -23,6 +24,7 @@
 </template>
 
 <template name="login">
+  <div id="login">
     <img src="/images/zanmi.svg" />
     <div id="sub">
         <p>¡Reúnete en cafeterías, restaurantes o bares y aprende otro idioma conversando con nuevos amigos!</p>
@@ -51,6 +53,7 @@
           <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
         </div>
       </div>
+  </div>
 </template>
       
 <template name="LoginLayout">
@@ -64,7 +67,25 @@
 <template name="selectLanguage">
   <p>sadada</p>
 </template>
-
-<template name="interes">
-  <h1>asdasda</h1>
+<template name="listaIntereses">
+  <div class='flex'>
+      {{#each intereses}}
+        <a class="waves-effect waves-dark btn-large btn-flat" data-tag={{nombre}}>
+          {{#if activo}}
+          <i class="material-icons left">remove_circle</i>
+          {{else}}
+          <i class="material-icons left">add_box</i>
+          {{/if}}
+          {{nombre}}</a>
+      {{/each}}
+    </div>
 </template>
+<template name="interes">
+  <div id="interes">
+    <img src="/images/zanmi.svg" />
+    <h3>¡Cuentanos de ti!</h3>
+    <p>Agrega etiquetas a tu perfil, ¡facilitará encontrar gente con tus mismos gustos y hobbies! </p>
+    {{> listaIntereses}}
+  </div>
+</template>
+

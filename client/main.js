@@ -5,6 +5,7 @@ import { $ } from 'meteor/jquery'
 import { Router } from 'meteor/iron:router'
 
 import { Chileno, Haitiano } from '../both/collections'
+const intereses = ['Futbol', 'Música', 'Arte', 'Tennis', 'Tecnología', 'Comida', 'Arquitectura', 'Medicina', 'Diseño', 'Construcción', 'Familia', 'Animales', 'Películas', 'Fiestas', 'Libros']
 
 import './main.html';
 
@@ -32,16 +33,38 @@ Template.logoutButton.events({
 
 Template.test.events({
   'click #creol' (event) {
-    Meteor.call('asignarLenguaje', Meteor.userId(), 0)
+    Meteor.call('asignarLenguaje', 0)
   },
   'click #espanol' (event) {
-    Meteor.call('asignarLenguaje', Meteor.userId(), 1)
+    Meteor.call('asignarLenguaje', 1)
   },
   'click a' (event) {
     Router.go('interes')
   }
 })
+Template.listaIntereses.helpers({
+  intereses: function() {
+    var user = Meteor.user()
+    if (user) {
+      return formatIntereses(intereses, Meteor.user())
+    }
+    return false
+  }
+})
 
 
+Template.listaIntereses.events({
+  'click .btn-flat' (event) {
+    Meteor.call('toggleInterest', event.target.dataset.tag)
+    console.log(Meteor.user())
+  }
+})
 
-
+function formatIntereses (intereses, user) {
+  return intereses.map(interes => {
+    return {
+      nombre: interes,
+      activo: user.profile.interest.includes(interes)
+    }
+  })
+}
