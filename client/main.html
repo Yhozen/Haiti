@@ -12,14 +12,11 @@
 </template>
 <template name="test">
   <div id="lenguaje">
+      <img src="/images/zanmi.svg" />
       <h3>Bienvenido, {{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h3>
       <h5>¿Cuál es tu lenguaje nativo?</h5>
       <a class="waves-effect waves-dark btn-large btn-flat white" id="creol">Creol</a>
       <a class="waves-effect waves-dark btn-large btn-flat white" id="espanol">Español</a>
-      {{#unless currentUser.profile.language}}
-        {{> selectLanguage}}
-      {{/unless}}  
-      {{> logoutButton}}
   </div>
 </template>
 
@@ -64,17 +61,14 @@
   </div>
 </template>
 
-<template name="selectLanguage">
-  <p>sadada</p>
-</template>
 <template name="listaIntereses">
   <div class='flex'>
       {{#each intereses}}
         <a class="waves-effect waves-dark btn-large btn-flat" data-tag={{nombre}}>
           {{#if activo}}
-          <i class="material-icons left">remove_circle</i>
+          <i class="material-icons left" data-tag={{nombre}}>remove_circle</i>
           {{else}}
-          <i class="material-icons left">add_box</i>
+          <i class="material-icons left" data-tag={{nombre}}>add_box</i>
           {{/if}}
           {{nombre}}</a>
       {{/each}}

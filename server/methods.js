@@ -10,7 +10,7 @@ Meteor.methods({
         listOfInt = Meteor.user().profile.interest
     }
     if (listOfInt.includes(interest)) {
-        listOfInt.pop(interest)
+        listOfInt = listOfInt.filter((x) => x != interest)
     } else {
         listOfInt.push(interest)
     }
