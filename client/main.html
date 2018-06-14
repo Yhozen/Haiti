@@ -5,7 +5,10 @@
 
 <template name="MainLayout">
   <div id="azulmorado">
-      {{> yield}}
+    <img src="/images/zanmi.svg" id="mainLogo"/>
+    {{> navbar}}
+   
+    {{> yield}}
   </div>
 </template>
 
@@ -88,5 +91,13 @@
 
 <template name="perfil">
   <h1>test</h1>
+</template>
+
+<template name="navbar">
+  <ul id="nav-mobile">
+    <li><a class="btn-flat btn-large" href="perfil">Mi perfil</a></li>
+    <li><a class="btn-flat btn-large" href="badges.html">Explorar Amigos</a></li>
+    <li><a class="btn-flat btn-large" href="collapsible.html">Explorar Etiquetas</a></li>
+  </ul>
 </template>
 
