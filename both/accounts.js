@@ -1,5 +1,6 @@
 
 import { AccountsTemplates } from 'meteor/useraccounts:core'
+import { $ } from 'meteor/jquery'
 
 AccountsTemplates.configure({
     defaultLayout: 'LoginLayout',
@@ -9,7 +10,7 @@ AccountsTemplates.configure({
     //showForgotPasswordLink: true,
     onLogoutHook: function () {
       Router.go('home')
-    }
+    },
   })
 
   let pwd = AccountsTemplates.removeField('password')

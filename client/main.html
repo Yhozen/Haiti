@@ -7,9 +7,13 @@
   <div id="azulmorado">
     <img src="/images/zanmi.svg" id="mainLogo"/>
     {{> navbar}}
-   
     {{> yield}}
   </div>
+  {{> disconnect}}
+</template>
+
+<template name="disconnect">
+    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">power_settings_new</i></a>
 </template>
 
 <template name="MainLayout2">
@@ -19,6 +23,7 @@
      
       {{> yield}}
     </div>
+    {{> disconnect}}
   </template>
 
 <template name="logoutButton">
@@ -99,11 +104,14 @@
 </template>
 
 <template name="perfil">
-    <div class="row">
+    <div class="row perfil">
         <div class="col s6 textos">
             <h2>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h2>
-            <h5>{{capitalize (idioma)}}</h5>
-            <h5>Nivel 2</h5>
+            <h5 style="font-weight: lighter; font-style: oblique">{{capitalize (idioma)}}</h5>
+            <h5 style="font-weight: lighter; font-style: oblique">Nivel 2</h5>
+            <p style="color:#333"> “Me llamo Paul, tengo 26 años y se poco español. Me califico como algo introvertido,ng elit, sed diam nonummy nibh em veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip”.</p>
+            <p style="font-weight: bold">Etiquetas</p>
+            {{> listActiva}}
         </div>
         <div class="col s6">
             <img id="profile_pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" />
@@ -122,11 +130,20 @@
 <template name="tags">
   <div class="somepadding tags">
     <h3>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h3>
+    {{> listActiva}}
     <p>¿Quieres agregar más etiquetas a tu perfil?</p>
     {{> listaIntereses}}
   </div>
 </template>
 
 <template name="amigos">
-    <h2>sadasdas</h2>
+    <h2 style="color:white">Próximamente</h2>
   </template>
+
+<template name='listActiva'>
+  <div id="listActiva">
+      {{#each interes in currentUser.profile.interest}}
+      <a class="waves-effect waves-dark btn-medium btn-flat" disabled >{{interes}}</a>
+      {{/each}}
+  </div>
+</template>

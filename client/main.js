@@ -25,12 +25,6 @@ Template.login.rendered = function() {
   $('.modal').modal()
 }
 
-Template.logoutButton.events({
-  'click #logout'(event) {
-    AccountsTemplates.logout()
-  }
-})
-
 Template.lenguaje.events({
   'click #creol' (event) {
     Meteor.call('asignarLenguaje', 0)
@@ -44,7 +38,7 @@ Template.lenguaje.events({
 })
 Template.listaIntereses.helpers({
   intereses: function() {
-    var user = Meteor.user()
+    let user = Meteor.user()
     if (user) {
       return formatIntereses(intereses, Meteor.user())
     }
@@ -74,6 +68,11 @@ Template.listaIntereses.events({
 Template.interes.events({
   'click .morado' (event) {
     Router.go('main')
+  }
+})
+Template.disconnect.events({
+  'click a' (event) {
+    AccountsTemplates.logout()
   }
 })
 

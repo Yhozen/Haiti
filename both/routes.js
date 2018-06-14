@@ -63,8 +63,13 @@ Router.route('/amigos', {
   }
 })
 function redirectLogged () {
-  if (Meteor.user()) {
-    Router.go('lenguaje')
+  let user = Meteor.user()
+  if (user) {
+    if (user.profile.interest) {
+      Router.go('main')
+    } else {
+      Router.go('lenguaje')
+    }
   } else {
     this.next()
   }
