@@ -2,7 +2,6 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { $ } from 'meteor/jquery';
 
-
 import { Chileno, Haitiano } from '../both/collections'
 
 import './main.html';
@@ -18,9 +17,16 @@ Tracker.autorun(() => {
 //     return Chileno.find()
 //   },
 // })
-Template.body.rendered = function() {
-  $('#fullpage').fullpage({
-    verticalCentered: false,
-    scrollOverflow: false
-  });
+
+Template.login.rendered = function() {
+  $('.modal').modal()
 }
+
+Template.test.events({
+  'click #logout'(event) {
+    AccountsTemplates.logout()
+  }
+})
+
+
+

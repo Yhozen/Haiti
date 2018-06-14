@@ -1,23 +1,44 @@
 import { Meteor } from 'meteor/meteor'
 import { Router } from 'meteor/iron:router'
+import { T9n } from 'meteor/softwarerero:accounts-t9n'
 
+T9n.setLanguage('es')
+
+if (Meteor.isClient) {
+  Router.configure({
+    layoutTemplate: 'MainLayout',
+    where: 'client'
+  })
+}
 
 Router.route('/', {
   name: 'home',
   template: 'login',
   layoutTemplate: 'LoginLayout',
-  action: function () {
-    this.render()
-  }
-})/*
-
-Router.route('/estado', {
-  name: 'estado',
-  template: 'estado',
+  onBeforeAction: redirectLogged,
   action: function () {
     this.render()
   }
 })
+
+
+Router.route('/new', {
+  name: 'new',
+  template: 'test',
+  layoutTemplate: 'LoginLayout',
+  action: function () {
+    this.render()
+  }
+})
+function redirectLogged () {
+  if (Meteor.user()) {
+    Router.go('new')
+  } else {
+    this.next()
+  }
+}
+
+/*
 
 Router.route('/incidencia', {
   name: 'incidencia',

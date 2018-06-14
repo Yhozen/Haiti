@@ -2,8 +2,16 @@
   <title>joseHaiti</title>
 </head>
 
-<template name="layout">
+<template name="MainLayout">
   {{> yield}}
+</template>
+
+<template name="logoutButton">
+    <button class="waves-effect waves-light btn-large btn-flat white"  id='logout'>Salir</button>
+</template>
+<template name="test">
+  <p>hola test</p>
+  {{> logoutButton}}
 </template>
 
 <template name="login">
@@ -13,18 +21,28 @@
     </div>
     <div id="botones">
         <p>¿Aún no tienes cuenta?</p>
-        <a class="waves-effect waves-light btn-large btn-flat white">REGISTRATE</a>
+        <a class="waves-effect waves-light btn-large btn-flat white modal-trigger" data-target="signIn-modal">REGISTRATE</a>
         <p>¿Ya tienes cuenta?</p>
-        <a class="waves-effect waves-light btn-large btn-flat white">INICIA SESIóN</a>
+        <a class="waves-effect waves-light btn-large btn-flat white modal-trigger" data-target="logIn-modal">INICIA SESIóN</a>
     </div>
-</template>
-
-<template name="third">
-    <h2>Entra hoy 💪🏻</h2>
-</template>
-
-<template name="forth">
-    <h2>Hueles a popis! 💩</h2>
+    <!-- Modal Structure -->
+    <div id="signIn-modal"  class="modal">
+      <div class="modal-content">
+          {{> atForm state='signUp'}}
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+      </div>
+    </div>
+      <!-- Modal Structure -->
+      <div id="logIn-modal"  class="modal">
+        <div class="modal-content">
+            {{> atForm state='signIn'}}
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+        </div>
+      </div>
 </template>
       
 <template name="LoginLayout">
