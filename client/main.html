@@ -7,7 +7,16 @@
 </template>
 
 <template name="login">
-        {{> atForm}}
+    <img src="/images/zanmi.svg" />
+    <div id="sub">
+        <p>¡Reúnete en cafeterías, restaurantes o bares y aprende otro idioma conversando con nuevos amigos!</p>
+    </div>
+    <div id="botones">
+        <p>¿Aún no tienes cuenta?</p>
+        <a class="waves-effect waves-light btn-large btn-flat white">REGISTRATE</a>
+        <p>¿Ya tienes cuenta?</p>
+        <a class="waves-effect waves-light btn-large btn-flat white">INICIA SESIóN</a>
+    </div>
 </template>
 
 <template name="third">
@@ -21,16 +30,7 @@
 <template name="LoginLayout">
   <div id="wrapper">
     <div id="main">
-      <img src="/images/zanmi.svg" />
-      <div id="sub">
-          <p>¡Reúnete en cafeterías, restaurantes o bares y aprende otro idioma conversando con nuevos amigos!</p>
-      </div>
-      <div id="botones">
-          <p>¿Aún no tienes cuenta?</p>
-          <a class="waves-effect waves-light btn-large btn-flat white">REGISTRATE</a>
-          <p>¿Ya tienes cuenta?</p>
-          <a class="waves-effect waves-light btn-large btn-flat white">INICIA SESIóN</a>
-      </div>
+      {{> yield}}
     </div>
   </div>
 </template>
