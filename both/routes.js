@@ -5,7 +5,7 @@ import { Router } from 'meteor/iron:router'
 Router.route('/', {
   name: 'home',
   template: 'login',
-  layoutTemplate: 'layout',
+  layoutTemplate: 'LoginLayout',
   action: function () {
     this.render()
   }

@@ -2,10 +2,6 @@
   <title>joseHaiti</title>
 </head>
 
-<body>
-    
-</body>
-
 <template name="layout">
   {{> yield}}
 </template>
@@ -22,3 +18,19 @@
     <h2>Hueles a popis! 💩</h2>
 </template>
       
+<template name="LoginLayout">
+  <div id="wrapper">
+    <div id="main">
+      <img src="/images/zanmi.svg" />
+      <div id="sub">
+          <p>¡Reúnete en cafeterías, restaurantes o bares y aprende otro idioma conversando con nuevos amigos!</p>
+      </div>
+      <div id="botones">
+          <p>¿Aún no tienes cuenta?</p>
+          <a class="waves-effect waves-light btn-large btn-flat white">REGISTRATE</a>
+          <p>¿Ya tienes cuenta?</p>
+          <a class="waves-effect waves-light btn-large btn-flat white">INICIA SESIóN</a>
+      </div>
+    </div>
+  </div>
+</template>
