@@ -16,8 +16,11 @@ Tracker.autorun(() => {
   Meteor.subscribe('haitiano')
 })
 
-Template.login.rendered = function() {
+Template.login.rendered = function () {
   $('.modal').modal()
+}
+
+Template.perfil.rendered = function () {
 }
 
 Template.lenguaje.events({
@@ -33,7 +36,7 @@ Template.lenguaje.events({
 })
 
 Template.listaIntereses.helpers({
-  intereses: function() {
+  intereses () {
     let user = Meteor.user()
     if (user && user.profile && user.profile.interest) {
       return formatIntereses(intereses, Meteor.user())
@@ -50,21 +53,25 @@ Template.listaIntereses.helpers({
 })
 
 Template.perfil.helpers({
-  idioma: function() {
-    if (Meteor.user().profile.language === 0) {
+  idioma () {
+    if (Meteor.user() && Meteor.user().profile.language === 0) {
       return 'creol'
     } else {
       return 'español'
     }
   },
-  capitalize: (string) => string.charAt(0).toUpperCase() + string.slice(1)
+  capitalize: (string) => string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : null
 })
 
+Template.perfil.events({
+  'input' (event) {
+    $('#desc').text()
+  }
+})
 
 Template.listaIntereses.events({
   'click .btn-flat' (event) {
     Meteor.call('toggleInterest', event.target.dataset.tag)
-    console.log(Meteor.user())
   }
 })
 

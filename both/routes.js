@@ -39,7 +39,7 @@ Router.route('/interes', {
   }
 })
 
-Router.route('/perfil', {
+Router.route('/profile', {
   name: 'main',
   template: 'perfil',
   action: function () {
@@ -54,7 +54,7 @@ Router.route('/tags', {
     this.render()
   }
 })
-Router.route('/amigos', {
+Router.route('/friends', {
   name: 'amigos',
   template: 'amigos',
   layoutTemplate: 'MainLayout2',

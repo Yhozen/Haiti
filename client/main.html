@@ -13,7 +13,7 @@
 </template>
 
 <template name="disconnect">
-    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">power_settings_new</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light rojo"><i class="material-icons">power_settings_new</i></a>
 </template>
 
 <template name="MainLayout2">
@@ -26,9 +26,6 @@
     {{> disconnect}}
   </template>
 
-<template name="logoutButton">
-    <button class="waves-effect waves-dark btn-large btn-flat white"  id='logout'>Salir</button>
-</template>
 <template name="lenguaje">
   <div id="lenguaje">
       <img src="/images/zanmi.svg" />
@@ -99,17 +96,17 @@
     <h3>¡Cuentanos de ti!</h3>
     <p>Agrega etiquetas a tu perfil, ¡facilitará encontrar gente con tus mismos gustos y hobbies! </p>
     {{> listaIntereses}}
-    <a class="waves-effect waves-dark btn-large btn-flat morado">finalizar</a>
+    <a class="waves-effect waves-dark btn-large btn-flat azulmorado">finalizar</a>
   </div>
 </template>
 
 <template name="perfil">
     <div class="row perfil">
         <div class="col s6 textos">
-            <h2>{{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h2>
-            <h5 style="font-weight: lighter; font-style: oblique">{{capitalize (idioma)}}</h5>
+            <h2>{{capitalize currentUser.profile.nombre}} {{capitalize currentUser.profile.apellido}}</h2>
+            <h5 style="font-weight: lighter; font-style: oblique">{{capitalize idioma}}</h5>
             <h5 style="font-weight: lighter; font-style: oblique">Nivel 2</h5>
-            <p style="color:#333"> “Me llamo Paul, tengo 26 años y se poco español. Me califico como algo introvertido,ng elit, sed diam nonummy nibh em veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip”.</p>
+            <p style="color:#333" contenteditable id="desc"> “Me llamo Paul, tengo 26 años y se poco español. Me califico como algo introvertido,ng elit, sed diam nonummy nibh em veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip”.</p>
             <p style="font-weight: bold">Etiquetas</p>
             {{> listActiva}}
         </div>
@@ -121,8 +118,8 @@
 
 <template name="navbar">
   <ul id="nav-mobile">
-    <li><a class="btn-flat btn-large" href="perfil">Mi perfil</a></li>
-    <li><a class="btn-flat btn-large" href="amigos">Explorar Amigos</a></li>
+    <li><a class="btn-flat btn-large" href="profile">Mi perfil</a></li>
+    <li><a class="btn-flat btn-large" href="friends">Explorar Amigos</a></li>
     <li><a class="btn-flat btn-large" href="tags">Explorar Etiquetas</a></li>
   </ul>
 </template>
@@ -137,7 +134,7 @@
 </template>
 
 <template name="amigos">
-    <h2 style="color:white">Próximamente</h2>
+    <h3>Próximamente</h3>
   </template>
 
 <template name='listActiva'>

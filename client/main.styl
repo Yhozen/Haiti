@@ -1,16 +1,33 @@
 /* CSS declarations go here */
-crema = rgba(#F3C677, 0.66)
+crema = #f3e4bb
 morado = rgba(#EFEFF4, 0.49)
-azulmorado = #0D0A3F
+azulmorado = #007268
 azulmoradobg = rgba(azulmorado, 0.71)
 amarillo = #FFC400
+rojo = #bf1f1f
+
+.rojo
+    background-color rojo !important
+.crema
+    background-color crema !important
+.azulmorado
+    background-color azulmorado !important
+.azulmoradobg
+    background-color azulmoradobg !important
+.morado
+    background-color morado !important
+.amarillo
+    background-color amarillo !important
+
+
+
 
 * 
     box-sizing border-box
 
 html, body 
     padding 0
-    min-height 100%
+    height 100%
     font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 #wrapper 
@@ -65,8 +82,7 @@ html, body
     img     
         width 500px
         display block
-    .morado
-        background-color azulmorado
+    .azulmorado
         color #FFECAC
         display block
         margin 13px auto
@@ -74,7 +90,7 @@ html, body
 
 #listaIntereses
     a 
-        background-color #F9564F
+        background-color rojo
         flex-grow: 1;
         margin 7px
         width: 30%;
@@ -114,8 +130,6 @@ html, body
     background-color crema
     padding 30px
     min-height 100vh
-    h3
-        color white
 
 .somepadding
     padding-left 15px
@@ -133,7 +147,7 @@ html, body
         font-style oblique
 #listActiva
     .btn.disabled, .disabled.btn-large, .btn-floating.disabled, .btn-large.disabled, .btn-flat.disabled, .btn:disabled, .btn-large:disabled, .btn-floating:disabled, .btn-large:disabled, .btn-flat:disabled, .btn[disabled], [disabled].btn-large, .btn-floating[disabled], .btn-large[disabled], .btn-flat[disabled]
-        background-color #F9564F !important
+        background-color rojo !important
         flex-grow 1
         margin 7px
         width 30%

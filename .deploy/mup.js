@@ -3,7 +3,7 @@ module.exports = {
     one: {
       // TODO: set host address, username, and authentication method
       host: '45.33.56.99',
-      username: 'garox',
+      username: 'garox'
       // pem: './path/to/pem'
       // or neither for authenticate from ssh-agent
     }
@@ -26,7 +26,7 @@ module.exports = {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
       ROOT_URL: 'http://garox.org',
-      MONGO_URL: 'mongodb://mongodb:27017/meteor_vermi',
+      MONGO_URL: 'mongodb://mongodb:27017/meteor_zamni',
       MONGO_OPLOG_URL: 'mongodb://mongodb:27017/local',
       PORT: 3018
     },
@@ -47,7 +47,6 @@ module.exports = {
       one: {}
     }
   },
-
   // (Optional)
   // Use the proxy to setup ssl or to route requests to the correct
   // app when there are several apps
