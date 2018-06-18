@@ -2,9 +2,9 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '45.33.56.99',
-      username: 'garox'
-      // pem: './path/to/pem'
+      host: '165.227.112.13',
+      username: 'root',
+      //pem: '~/.ssh/id_rsa'
       // or neither for authenticate from ssh-agent
     }
   },
@@ -25,10 +25,10 @@ module.exports = {
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://garox.org',
+      ROOT_URL: 'http://osomchile.com',
       MONGO_URL: 'mongodb://mongodb:27017/meteor_zamni',
       MONGO_OPLOG_URL: 'mongodb://mongodb:27017/local',
-      PORT: 3018
+      PORT: 2018
     },
 
     docker: {
