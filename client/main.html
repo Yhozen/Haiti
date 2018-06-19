@@ -31,44 +31,11 @@
       <img src="/images/zanmi.svg" />
       <h3>Bienvenido, {{currentUser.profile.nombre}} {{currentUser.profile.apellido}}</h3>
       <h5>¿Cuál es tu lenguaje nativo?</h5>
-      <a class="waves-effect waves-dark btn-large btn-flat white" id="creol">Creol</a>
+      <a class="waves-effect waves-dark btn-large btn-flat white" id="creol">Kreyòl</a>
       <a class="waves-effect waves-dark btn-large btn-flat white" id="espanol">Español</a>
   </div>
 </template>
 
-<template name="login">
-  <div id="login">
-    <img src="/images/zanmi.svg" />
-    <div id="sub">
-        <p>¡Reúnete en cafeterías, restaurantes o bares y aprende otro idioma conversando con nuevos amigos!</p>
-    </div>
-    <div id="botones">
-        <p>¿Aún no tienes cuenta?</p>
-        <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="signIn-modal">REGISTRATE</a>
-        <p>¿Ya tienes cuenta?</p>
-        <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="logIn-modal">INICIA SESIóN</a>
-    </div>
-    <!-- Modal Structure -->
-    <div id="signIn-modal"  class="modal">
-      <div class="modal-content">
-          {{> atForm state='signUp'}}
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
-      </div>
-    </div>
-      <!-- Modal Structure -->
-      <div id="logIn-modal"  class="modal">
-        <div class="modal-content">
-            {{> atForm state='signIn'}}
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
-        </div>
-      </div>
-  </div>
-</template>
-      
 <template name="LoginLayout">
   <div id="wrapper">
     <div id="main">
@@ -77,50 +44,12 @@
   </div>
 </template>
 
-<template name="listaIntereses">
-  <div class='flex' id="listaIntereses">
-      {{#each intereses}}
-        <a class="waves-effect waves-dark btn-large btn-flat" data-tag={{nombre}}>
-          {{#if activo}}
-          <i class="material-icons left" data-tag={{nombre}}>remove_circle</i>
-          {{else}}
-          <i class="material-icons left" data-tag={{nombre}}>add_box</i>
-          {{/if}}
-          {{nombre}}</a>
-      {{/each}}
-    </div>
-</template>
-<template name="interes">
-  <div id="interes">
-    <img src="/images/zanmi.svg" />
-    <h3>¡Cuentanos de ti!</h3>
-    <p>Agrega etiquetas a tu perfil, ¡facilitará encontrar gente con tus mismos gustos y hobbies! </p>
-    {{> listaIntereses}}
-    <a class="waves-effect waves-dark btn-large btn-flat azulmorado">finalizar</a>
-  </div>
-</template>
-
-<template name="perfil">
-    <div class="row perfil">
-        <div class="col s6 textos">
-            <h2>{{capitalize currentUser.profile.nombre}} {{capitalize currentUser.profile.apellido}}</h2>
-            <h5 style="font-weight: lighter; font-style: oblique">{{capitalize idioma}}</h5>
-            <h5 style="font-weight: lighter; font-style: oblique">Nivel 2</h5>
-            <p style="color:#333" contenteditable id="desc"> “Me llamo Paul, tengo 26 años y se poco español. Me califico como algo introvertido,ng elit, sed diam nonummy nibh em veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip”.</p>
-            <p style="font-weight: bold">Etiquetas</p>
-            {{> listActiva}}
-        </div>
-        <div class="col s6">
-            <img id="profile_pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" />
-        </div>
-      </div>
-</template>
-
 <template name="navbar">
   <ul id="nav-mobile">
     <li><a class="btn-flat btn-large" href="profile">Mi perfil</a></li>
     <li><a class="btn-flat btn-large" href="friends">Explorar Amigos</a></li>
     <li><a class="btn-flat btn-large" href="tags">Explorar Etiquetas</a></li>
+    <li><a class="btn-flat btn-large" href="groups">Grupos</a></li>
   </ul>
 </template>
 
@@ -130,17 +59,5 @@
     {{> listActiva}}
     <p>¿Quieres agregar más etiquetas a tu perfil?</p>
     {{> listaIntereses}}
-  </div>
-</template>
-
-<template name="amigos">
-    <h3>Próximamente</h3>
-  </template>
-
-<template name='listActiva'>
-  <div id="listActiva">
-      {{#each interes in currentUser.profile.interest}}
-      <a class="waves-effect waves-dark btn-medium btn-flat" disabled >{{interes}}</a>
-      {{/each}}
   </div>
 </template>

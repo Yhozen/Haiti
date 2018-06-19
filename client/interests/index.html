@@ -1,0 +1,24 @@
+
+<template name="listaIntereses">
+  <div class='flex' id="listaIntereses">
+      {{#each intereses}}
+        <a class="waves-effect waves-dark btn-large btn-flat" data-tag={{nombre}}>
+          {{#if activo}}
+          <i class="material-icons left" data-tag={{nombre}}>remove_circle</i>
+          {{else}}
+          <i class="material-icons left" data-tag={{nombre}}>add_box</i>
+          {{/if}}
+          {{nombre}}</a>
+      {{/each}}
+    </div>
+</template>
+
+<template name="interes">
+  <div id="interes">
+    <img src="/images/zanmi.svg" />
+    <h3>¡Cuentanos de ti!</h3>
+    <p>Agrega etiquetas a tu perfil, ¡facilitará encontrar gente con tus mismos gustos y hobbies! </p>
+    {{> listaIntereses}}
+    <a class="waves-effect waves-dark btn-large btn-flat azulmorado">finalizar</a>
+  </div>
+</template>

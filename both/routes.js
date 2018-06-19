@@ -6,7 +6,7 @@ T9n.setLanguage('es')
 
 if (Meteor.isClient) {
   Router.configure({
-    layoutTemplate: 'MainLayout',
+    layoutTemplate: 'MainLayout2',
     where: 'client'
   })
 }
@@ -42,6 +42,7 @@ Router.route('/interes', {
 Router.route('/profile', {
   name: 'main',
   template: 'perfil',
+  layoutTemplate: 'MainLayout',
   action: function () {
     this.render()
   }
@@ -49,7 +50,6 @@ Router.route('/profile', {
 Router.route('/tags', {
   name: 'tags',
   template: 'tags',
-  layoutTemplate: 'MainLayout2',
   action: function () {
     this.render()
   }
@@ -57,7 +57,13 @@ Router.route('/tags', {
 Router.route('/friends', {
   name: 'amigos',
   template: 'amigos',
-  layoutTemplate: 'MainLayout2',
+  action: function () {
+    this.render()
+  }
+})
+Router.route('/groups', {
+  name: 'groups',
+  template: 'groups',
   action: function () {
     this.render()
   }

@@ -1,0 +1,34 @@
+
+<template name="login">
+    <div id="login">
+        <img src="/images/zanmi.svg" />
+        <div id="sub">
+            <p>¡Reúnete en cafeterías, restaurantes o bares y aprende otro idioma conversando con nuevos amigos!</p>
+        </div>
+        <div id="botones">
+            <p>¿Aún no tienes cuenta?</p>
+            <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="signIn-modal">REGISTRATE</a>
+            <p>¿Ya tienes cuenta?</p>
+            <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="logIn-modal">INICIA SESIóN</a>
+        </div>
+        <!-- Modal Structure -->
+        <div id="signIn-modal"  class="modal">
+        <div class="modal-content">
+            {{> atForm state='signUp'}}
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+        </div>
+        </div>
+        <!-- Modal Structure -->
+        <div id="logIn-modal"  class="modal">
+            <div class="modal-content">
+                {{> atForm state='signIn'}}
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
+            </div>
+        </div>
+</div>
+</template>
+        
