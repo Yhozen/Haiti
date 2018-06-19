@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 
+import './index.html'
+
 Template.perfil.helpers({
     idioma () {
         if (Meteor.user() && Meteor.user().profile.language === 0) {
