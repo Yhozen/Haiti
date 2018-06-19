@@ -25,7 +25,7 @@ module.exports = {
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://osomchile.com',
+      ROOT_URL: 'https://osomchile.com',
       MONGO_URL: 'mongodb://mongodb:27017/meteor_zamni',
       MONGO_OPLOG_URL: 'mongodb://mongodb:27017/local',
       PORT: 2018
@@ -50,6 +50,20 @@ module.exports = {
   // (Optional)
   // Use the proxy to setup ssl or to route requests to the correct
   // app when there are several apps
+
+  proxy: {
+    domains: 'osomchile.com,www.osomchile.com',
+
+    ssl: {
+      // Enable Let's Encrypt
+      letsEncryptEmail: 'gabriel@garox.org'
+    },
+
+    shared: {
+      httpPort: 2018
+    }
+
+  }
 
   // proxy: {
   //   domains: 'mywebsite.com,www.mywebsite.com',

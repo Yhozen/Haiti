@@ -76,7 +76,7 @@ Template.listaIntereses.events({
 })
 
 Template.interes.events({
-  'click .morado' (event) {
+  'click .azulmorado' (event) {
     Router.go('main')
   }
 })
