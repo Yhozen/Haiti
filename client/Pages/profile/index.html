@@ -1,11 +1,11 @@
-
 <template name="perfil">
     <div class="row perfil">
         <div class="col s6 textos">
             <h2>{{capitalize currentUser.profile.nombre}} {{capitalize currentUser.profile.apellido}}</h2>
             <h5 style="font-weight: lighter; font-style: oblique">{{capitalize idioma}}</h5>
             <h5 style="font-weight: lighter; font-style: oblique">Nivel 2</h5>
-            <p style="color:#333" contenteditable id="desc"> “Me llamo Paul, tengo 26 años y se poco español. Me califico como algo introvertido,ng elit, sed diam nonummy nibh em veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip”.</p>
+            <p style="color:#333" contenteditable id="desc"></p>
+            <a id="edit-desc">Guardar descripción</a>
             <p style="font-weight: bold">Etiquetas</p>
             {{> listActiva}}
         </div>
@@ -19,6 +19,8 @@
     <div id="listActiva">
         {{#each interes in currentUser.profile.interest}}
         <a class="waves-effect waves-dark btn-medium btn-flat" disabled >{{interes}}</a>
+        {{else}}
+        <a class="waves-effect waves-dark btn-medium btn-flat" disabled >Sin intereses todavia</a>
         {{/each}}
     </div>
 </template>

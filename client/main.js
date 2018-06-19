@@ -1,14 +1,11 @@
 import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 
-import { Chileno, Haitiano } from '../both/collections'
-
-import './Layouts/Parts.html'
+import './Layouts/Parts'
 
 // Subscribe to the count for the current room.
 Tracker.autorun(() => {
-  Meteor.subscribe('chileno')
-  Meteor.subscribe('haitiano')
+  Meteor.subscribe('allUserData')
 })
 
 Template.disconnect.events({

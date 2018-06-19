@@ -4,6 +4,9 @@ Meteor.methods({
   asignarLenguaje (language) {
     Meteor.users.update(Meteor.userId(), {$set: {'profile.language': language }})
   },
+  updateDesc (desc) {
+    Meteor.users.update(Meteor.userId(), {$set: {'profile.desc': desc }})
+  },
   toggleInterest (interest) {
     let listOfInt = []
     if (Meteor.user().profile.interest) {

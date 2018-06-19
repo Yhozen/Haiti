@@ -32,3 +32,5 @@ accounts-base
 accounts-password
 accounts-facebook
 service-configuration
+
+lamatyus:toastr

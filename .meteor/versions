@@ -51,6 +51,7 @@ iron:middleware-stack@1.1.0
 iron:router@1.1.2
 iron:url@1.1.0
 jquery@1.11.10
+lamatyus:toastr@2.1.34
 launch-screen@1.1.1
 livedata@1.0.18
 localstorage@1.2.0

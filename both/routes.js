@@ -7,7 +7,8 @@ T9n.setLanguage('es')
 if (Meteor.isClient) {
   Router.configure({
     layoutTemplate: 'MainLayout2',
-    where: 'client'
+    where: 'client',
+    loadingTemplate: 'loading',
   })
 }
 
@@ -43,6 +44,7 @@ Router.route('/profile', {
   name: 'main',
   template: 'perfil',
   layoutTemplate: 'MainLayout',
+  waitOn: () => [ Meteor.subscribe('allUserData') ],
   action: function () {
     this.render()
   }
@@ -57,6 +59,7 @@ Router.route('/tags', {
 Router.route('/friends', {
   name: 'amigos',
   template: 'amigos',
+  waitOn: () => [ Meteor.subscribe('allUserData') ],
   action: function () {
     this.render()
   }

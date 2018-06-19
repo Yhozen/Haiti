@@ -1,3 +1,14 @@
 <template name="amigos">
-    <h3>Próximamente</h3>
+    {{#each personas}}
+        {{> persona}}
+    {{/each}}
+</template>
+
+<template name="persona">
+    <h4 style='font-weight: 600'>{{capitalize profile.nombre}} {{capitalize profile.apellido}}</h4>
+    <p>
+        {{#each interes in profile.interest}}
+            {{interes}}
+        {{/each}}
+    </p>
 </template>
