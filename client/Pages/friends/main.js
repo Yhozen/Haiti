@@ -6,7 +6,6 @@ import './index.html'
 Template.amigos.helpers({
     personas () {
         let users = Meteor.users.find()
-        console.log(users)
         return users
     }
 })
@@ -14,4 +13,10 @@ Template.amigos.helpers({
 
 Template.persona.helpers({
     capitalize: (string) => string ? string.charAt(0).toUpperCase() + string.slice(1).toLowerCase() : null,
+})
+
+Template.persona.events({
+    'click a' (event) {
+        Meteor.call('addFriend',this._id)
+    }
 })

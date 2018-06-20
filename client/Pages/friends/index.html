@@ -1,14 +1,26 @@
 <template name="amigos">
-    {{#each personas}}
-        {{> persona}}
-    {{/each}}
+    <div id="amigos" class="row">
+        {{#each personas}}
+            {{> persona}}
+        {{/each}}
+    </div>
 </template>
 
 <template name="persona">
-    <h4 style='font-weight: 600'>{{capitalize profile.nombre}} {{capitalize profile.apellido}}</h4>
-    <p>
-        {{#each interes in profile.interest}}
-            {{interes}}
-        {{/each}}
-    </p>
+    <div class="col s6 valign-wrapper persona">
+        <div class="profile-image-div right-align">
+            <img class="profile_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" alt="profile_pic">
+        </div>
+        <div class="profile-text-div">
+            <h4 style='font-weight: 600'>{{capitalize profile.nombre}} {{capitalize profile.apellido}}</h4>
+            <p>
+                {{#each interes in profile.interest}}
+                    {{interes}}
+                {{/each}}
+            </p>
+            <a class="waves-effect waves-dark btn-medium btn-flat rojo">Agregar amigo</a>
+            <a class="waves-effect waves-dark btn-medium btn-flat rojo">Visitar perfil</a>
+
+        </div>
+    </div>
 </template>

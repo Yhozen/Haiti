@@ -7,6 +7,9 @@ Meteor.methods({
   updateDesc (desc) {
     Meteor.users.update(Meteor.userId(), {$set: {'profile.desc': desc }})
   },
+  addFriend (id) {
+    if (!Meteor.user().profile.friends || !Meteor.user().profile.friends.includes(id)) Meteor.users.update(Meteor.userId(), {$push: {'profile.friends':  id}})
+  },
   toggleInterest (interest) {
     let listOfInt = []
     if (Meteor.user().profile.interest) {
