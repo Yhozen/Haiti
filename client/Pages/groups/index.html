@@ -1,3 +1,22 @@
 <template name="groups">
-    <h2>grupos</h2>
+    <h3 style="font-weight: 600">Tus Grupos</h3>
+    <div class="row">
+        {{#each groups}}
+            {{> group}}
+        {{else}}
+            <h4>Aún no tienes grupos!</h4>
+        {{/each}}
+    </div>
+</template>
+
+<template name="group">
+    <div class="col s4 valign-wrapper">
+        <img class="profile_image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" alt="profile_pic">
+        <div class="group-text">
+            <h5 style="color: white;margin-bottom: 0;"> {{type}}</h5>
+            <p style="margin-top: 0; margin-bottom: 0; font-weight: 600">{{name}}</p>
+            <p style="margin-top: 0;">x miembros</p>
+            <a class="waves-effect waves-dark btn-medium btn-flat rojo">Abrir chat</a>
+        </div>
+    </div>
 </template>
