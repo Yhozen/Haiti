@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor'
+import { Chats } from '../both/collections'
 
 Meteor.methods({
   asignarLenguaje (language) {
@@ -22,5 +23,25 @@ Meteor.methods({
     }
     
     Meteor.users.update(Meteor.userId(), {$set: {'profile.interest':  listOfInt}})
+  },
+  openChat (id, text) {
+    let chat = Chats.findOne({ ids: {"$all": [ id, Meteor.userId()] } })
+    if (!chat) {
+      console.log('creado chat')
+      Chats.insert({ 
+        ids: [Meteor.userId(), id],
+        messages: [ {
+          text,
+          author: Meteor.userId()
+        } ] 
+      })
+    } else {
+      Chats.update(chat._id, {
+        $push: { 'messages':  {
+          author: Meteor.userId(),
+          text
+        }}
+      })
+    }
   }
 })

@@ -16,7 +16,10 @@ Template.persona.helpers({
 })
 
 Template.persona.events({
-    'click a' (event) {
+    'click .add' (event) {
         Meteor.call('addFriend',this._id)
+    },
+    'click .visit' (event) {
+        Session.set('chatUser', this._id)
     }
 })

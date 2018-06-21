@@ -1,0 +1,29 @@
+<template name="chatModal">
+     <!-- Modal Structure -->
+  <div id="chatModal" class="modal bottom-sheet">
+        <div class="modal-content">
+          <h4>Chat con Hola</h4>
+          <p>A bunch of text</p>
+        </div>
+        {{> bottomChat}}
+      </div>
+</template>
+
+<template name="bottomChat">
+    <div class="row">
+        <div class="input-field col s10">
+            <i class="material-icons prefix">mode_edit</i>
+            <textarea id="chatInput" class="materialize-textarea"></textarea>
+            <label for="chatInput">First Name</label>
+        </div>
+        <div class="col s2">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </div>
+</template>
+
+<template name="chatButton">
+    <a class="waves-effect waves-dark btn-large btn-flat white modal-trigger" data-target="chatModal">Abrir chat</a>
+</template>
