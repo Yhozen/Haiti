@@ -49,6 +49,20 @@ Router.route('/profile', {
     this.render()
   }
 })
+
+Router.route('/user/:_id', {
+  name: 'user',
+  template: 'user',
+  action () {
+    this.render()
+  },
+  data () {
+    let { _id } = this.params
+    return Meteor.users.findOne({ _id })
+  }
+})
+
+
 Router.route('/tags', {
   name: 'tags',
   template: 'tags',

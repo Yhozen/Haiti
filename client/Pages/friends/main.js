@@ -5,7 +5,7 @@ import './index.html'
 
 Template.amigos.helpers({
     personas () {
-        let users = Meteor.users.find()
+        let users = Meteor.users.find({ _id: { $ne:  Meteor.userId() }})
         return users
     }
 })

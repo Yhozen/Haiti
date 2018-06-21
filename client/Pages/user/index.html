@@ -1,0 +1,26 @@
+<template name="user">
+        <div class="row perfil">
+            <div class="col s6 textos">
+                <h2>{{capitalize profile.nombre}} {{capitalize profile.apellido}}</h2>
+                <h5 style="font-weight: lighter; font-style: oblique">{{capitalize idioma profile.language}}</h5>
+                <p style="color:#333" id="desc">{{profile.desc}}</p>
+                <p style="font-weight: bold">Etiquetas</p>
+                {{> userList}}
+                {{> chatButton}}
+                {{> chatModal}}
+            </div>
+            <div class="col s6">
+                <img id="profile_pic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=" />
+            </div>
+        </div>
+    </template>
+    
+    <template name='userList'>
+        <div id="listActiva">
+            {{#each interes in profile.interest}}
+            <a class="waves-effect waves-dark btn-medium btn-flat" disabled >{{interes}}</a>
+            {{else}}
+            <a class="waves-effect waves-dark btn-medium btn-flat" disabled >Sin intereses todavia</a>
+            {{/each}}
+        </div>
+    </template>
