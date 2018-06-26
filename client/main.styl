@@ -29,6 +29,7 @@ html, body
     padding 0
     height 100%
     font-family "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color fondo_inicio
 
 #wrapper 
     display flex
@@ -116,12 +117,19 @@ html, body
             background-color amarillo
             color #444
             text-transform none
-            min-width 15%
+            min-width 13%
             margin auto 0px
-            border-radius: 0
+            border-radius 0
+            padding 0 1.9rem
+    #notification
+        background-color fondo_inicio 
+        width 56px 
+        min-width 55px
+        padding 0
+        color rgba(white, 0.9)
 
 #mainLogo
-    height 94px
+    width 254px
     float right
     right 14px
     top 10px
@@ -202,7 +210,7 @@ a
         margin 10px 7px
 
 .profile_image
-    width 220px
+    width 200px
     border-radius 100%
     padding 20px
 
@@ -219,3 +227,11 @@ a
     text-align center
     right auto 
     bottom auto
+
+#notification
+    background-color fondo_inicio 
+    min-width 54px 
+
+@media only screen and (min-width: 993px) 
+    .container 
+        width 75%
