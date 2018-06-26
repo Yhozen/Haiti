@@ -3,24 +3,28 @@
   <div id="chatModal" class="modal bottom-sheet">
         <div class="modal-content">
           <h4>Chat con {{nombre}}</h4>
-          {{#each messages}}
-          <p class="{{#if me author}}me{{else}}you{{/if}}">{{text}}</p>
-            {{/each}}
+          <div class="texts">
+                {{#each messages}}
+                    <p class="{{#if me author}}me{{else}}you{{/if}}">{{text}}</p>
+                {{/each}}
+          </div>
         </div>
         {{> bottomChat}}
       </div>
 </template>
 
 <template name="bottomChat">
-    <div class="row">
-        <div class="input-field col s10">
-            <i class="material-icons prefix">mode_edit</i>
-            <input id="chatInput"/>
-        </div>
-        <div class="col s2 valign-wrapper ">
-            <button class="btn-large btn-floating waves-effect waves-light" id="enviar" type="submit" name="action">
-                <i class="material-icons right">send</i>
-            </button>
+    <div id="chatWrite">
+        <div class="row">
+                <div class="input-field col s10">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <input id="chatInput"/>
+                </div>
+                <div class="col s2 valign-wrapper ">
+                    <button class="btn-large btn-floating waves-effect waves-light" id="enviar" type="submit" name="action">
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
         </div>
     </div>
 </template>
