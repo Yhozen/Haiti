@@ -4,7 +4,7 @@ module.exports = {
       // TODO: set host address, username, and authentication method
       host: '165.227.112.13',
       username: 'root',
-      //pem: '~/.ssh/id_rsa'
+      pem: './deploy_key'
       // or neither for authenticate from ssh-agent
     }
   },
@@ -57,12 +57,8 @@ module.exports = {
     ssl: {
       // Enable Let's Encrypt
       letsEncryptEmail: 'gabriel@garox.org'
-    },
-
-    shared: {
-      httpPort: 2018
     }
-
+    
   }
 
   // proxy: {

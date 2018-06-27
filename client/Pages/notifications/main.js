@@ -4,12 +4,12 @@ import  Materialize from 'meteor/materialize:materialize'
 
 Template.notificationDrop.events({
     'click' (event) {
-        document.getElementById("myDropdown").classList.toggle("show");
+        document.getElementById("notificationDropdown").classList.toggle("show");
     }
 })
 Template.body.events({
     'click' (event) {
-        if (!event.target.matches('.dropbtn')&&!event.target.matches('i')) {
+        if (!event.target.matches('.dropbtn') && !event.target.matches('i')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
             var i;
             for (i = 0; i < dropdowns.length; i++) {
